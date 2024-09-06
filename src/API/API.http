@@ -1,0 +1,35 @@
+@API_HostAddress = http://localhost:5108
+@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFtYXVyaUB0ZXN0ZS5jb20iLCJyb2xlIjpbIkFkbWluIiwiVGVzdGUiXSwibmJmIjoxNzI1NDc2MjUwLCJleHAiOjE3MjU0NzcxNTAsImlhdCI6MTcyNTQ3NjI1MH0.sUCsEiIwZm4y0_5RRxefviDsXMG8w5OlGOVUJUIrU7E
+
+GET {{API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{API_HostAddress}}/users/
+content-type: application/json
+
+{
+  "Name": "Amauri M",
+  "Email": "amauri@teste.com",
+  "Password": "123",
+  "Roles": ["Admin", "Teste"]
+}
+
+###
+
+GET {{API_HostAddress}}/users/
+Accept: application/json
+Authorization: Bearer {{Token}}
+
+###
+
+POST {{API_HostAddress}}/authenticate/
+content-type: application/json
+
+{
+  "email": "amauri@teste.com",
+  "password": "123"
+}
+
+###
